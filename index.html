@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tony Studio — Diseño Gráfico &amp; Dirección de Arte</title>
+  <meta name="description" content="Tony Studio: estudio de diseño gráfico especializado en identidad visual, branding y dirección de arte. Diseño limpio, estratégico y memorable.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tony Studio — Diseño Gráfico &amp; Dirección de Arte">
+  <meta property="og:description" content="Estudio de diseño gráfico especializado en identidad visual, branding y dirección de arte. Diseño limpio, estratégico y memorable.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tonystudio.com">
+  <meta property="og:image" content="https://tonystudio.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tony Studio — Diseño Gráfico">
+  <meta name="twitter:description" content="Estudio de diseño gráfico especializado en identidad visual y branding.">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header" role="banner">
+    <div class="header__inner container">
+      <a href="#inicio" class="header__logo" aria-label="Tony Studio — Volver al inicio">
+        Tony Studio
+      </a>
+      <nav class="nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+          <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        type="button"
+      >
+        <span class="menu-toggle__bar" aria-hidden="true"></span>
+        <span class="menu-toggle__bar" aria-hidden="true"></span>
+        <span class="menu-toggle__bar" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Menú de navegación">
+    <nav aria-label="Menú móvil">
+      <ul class="mobile-menu__list">
+        <li><a href="#proyectos" class="mobile-menu__link">Proyectos</a></li>
+        <li><a href="#sobre-mi" class="mobile-menu__link">Sobre mí</a></li>
+        <li><a href="#servicios" class="mobile-menu__link">Servicios</a></li>
+        <li><a href="#contacto" class="mobile-menu__link">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- ========== MAIN ========== -->
+  <main id="inicio">
+
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="hero__label reveal" data-delay="0">Diseño Gráfico &amp; Dirección de Arte</p>
+          <h1 class="hero__heading reveal" id="hero-heading" data-delay="1">
+            Identidades visuales<br>
+            <em>que perduran.</em>
+          </h1>
+          <p class="hero__subtext reveal" data-delay="2">
+            Construyo marcas con carácter a través de diseño limpio,<br class="break-desktop">
+            estratégico y completamente memorable.
+          </p>
+          <a href="#proyectos" class="btn btn--outline reveal" data-delay="3" aria-label="Ir a la sección de proyectos">
+            Ver proyectos
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hero__deco" aria-hidden="true">
+          <svg class="hero__deco-svg" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+            <circle cx="210" cy="210" r="190" fill="none" stroke="#E5E5E3" stroke-width="1"/>
+            <circle cx="210" cy="210" r="130" fill="none" stroke="#B8976A" stroke-width="0.5"/>
+            <circle cx="210" cy="210" r="70" fill="none" stroke="#E5E5E3" stroke-width="0.5"/>
+            <line x1="20" y1="210" x2="400" y2="210" stroke="#E5E5E3" stroke-width="0.5"/>
+            <line x1="210" y1="20" x2="210" y2="400" stroke="#E5E5E3" stroke-width="0.5"/>
+            <circle cx="210" cy="210" r="3" fill="#111111"/>
+            <circle cx="210" cy="80" r="2.5" fill="#B8976A"/>
+            <circle cx="340" cy="210" r="2.5" fill="#B8976A"/>
+            <circle cx="210" cy="340" r="2.5" fill="#B8976A"/>
+            <circle cx="80" cy="210" r="2.5" fill="#B8976A"/>
+            <text x="215" y="76" font-family="Inter, sans-serif" font-size="9" fill="#999" letter-spacing="1.5">N</text>
+            <text x="344" y="214" font-family="Inter, sans-serif" font-size="9" fill="#999" letter-spacing="1.5">E</text>
+            <text x="215" y="352" font-family="Inter, sans-serif" font-size="9" fill="#999" letter-spacing="1.5">S</text>
+            <text x="68" y="214" font-family="Inter, sans-serif" font-size="9" fill="#999" letter-spacing="1.5">O</text>
+          </svg>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-line"></span>
+        <span class="hero__scroll-label">Scroll</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="proyectos" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-label">Trabajo seleccionado</p>
+          <h2 class="section-heading" id="projects-heading">Proyectos</h2>
+        </header>
+
+        <div class="projects__grid" role="list">
+
+          <!-- Card 1: Natura -->
+          <article
+            class="project-card reveal"
+            data-project-id="1"
+            role="listitem button"
+            tabindex="0"
+            aria-label="Abrir proyecto: Natura — Branding"
+          >
+            <div class="project-card__image" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <rect width="600" height="400" fill="#F2EDE4"/>
+                <circle cx="300" cy="220" r="160" fill="#D4C4A8" opacity="0.35"/>
+                <circle cx="225" cy="190" r="90" fill="#C8A882" opacity="0.5"/>
+                <circle cx="370" cy="235" r="70" fill="#E8D8C0" opacity="0.7"/>
+                <circle cx="300" cy="200" r="50" fill="#B8976A" opacity="0.2"/>
+                <text x="300" y="220" font-family="Georgia, serif" font-size="80" font-weight="300" fill="#7A5C42" text-anchor="middle" opacity="0.85">N</text>
+                <text x="300" y="360" font-family="Georgia, serif" font-size="11" fill="#A0876A" text-anchor="middle" letter-spacing="6" opacity="0.7">NATURA</text>
+              </svg>
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__category">Branding</span>
+              <h3 class="project-card__title">Natura</h3>
+            </div>
+          </article>
+
+          <!-- Card 2: Café Orión -->
+          <article
+            class="project-card reveal"
+            data-project-id="2"
+            role="listitem button"
+            tabindex="0"
+            aria-label="Abrir proyecto: Café Orión — Identidad Visual"
+          >
+            <div class="project-card__image" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <rect width="600" height="400" fill="#140E06"/>
+                <circle cx="300" cy="200" r="145" fill="none" stroke="#C8A053" stroke-width="1.5"/>
+                <circle cx="300" cy="200" r="90" fill="none" stroke="#C8A053" stroke-width="0.5" opacity="0.4"/>
+                <!-- 6 points of star -->
+                <circle cx="300" cy="55" r="4" fill="#C8A053"/>
+                <circle cx="425" cy="127" r="4" fill="#C8A053"/>
+                <circle cx="425" cy="273" r="4" fill="#C8A053"/>
+                <circle cx="300" cy="345" r="4" fill="#C8A053"/>
+                <circle cx="175" cy="273" r="4" fill="#C8A053"/>
+                <circle cx="175" cy="127" r="4" fill="#C8A053"/>
+                <!-- connecting lines subtle -->
+                <line x1="300" y1="55" x2="425" y2="273" stroke="#C8A053" stroke-width="0.4" opacity="0.3"/>
+                <line x1="425" y1="127" x2="175" y2="273" stroke="#C8A053" stroke-width="0.4" opacity="0.3"/>
+                <line x1="175" y1="127" x2="425" y2="273" stroke="#C8A053" stroke-width="0.4" opacity="0.3"/>
+                <text x="300" y="193" font-family="Georgia, serif" font-size="14" font-weight="400" fill="#C8A053" text-anchor="middle" letter-spacing="6">CAFÉ</text>
+                <text x="300" y="216" font-family="Georgia, serif" font-size="22" font-weight="300" fill="#C8A053" text-anchor="middle" letter-spacing="8">ORIÓN</text>
+              </svg>
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__category">Identidad Visual</span>
+              <h3 class="project-card__title">Café Orión</h3>
+            </div>
+          </article>
+
+          <!-- Card 3: Vol. 1 -->
+          <article
+            class="project-card reveal"
+            data-project-id="3"
+            role="listitem button"
+            tabindex="0"
+            aria-label="Abrir proyecto: Vol. 1 — Editorial"
+          >
+            <div class="project-card__image" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <rect width="600" height="400" fill="#F7F7F7"/>
+                <!-- Left column: dark panel -->
+                <rect x="50" y="40" width="240" height="320" fill="#111111"/>
+                <!-- Right column: split panels -->
+                <rect x="310" y="40" width="240" height="150" fill="#DCDCDC"/>
+                <rect x="310" y="210" width="240" height="150" fill="#C8C8C8"/>
+                <!-- Large number in left panel -->
+                <text x="170" y="240" font-family="Georgia, serif" font-size="140" font-weight="300" fill="#FFFFFF" text-anchor="middle" opacity="0.9">1</text>
+                <!-- Label in right panel -->
+                <text x="430" y="110" font-family="Georgia, serif" font-size="11" fill="#555555" text-anchor="middle" letter-spacing="5">VOL.</text>
+                <text x="430" y="130" font-family="Georgia, serif" font-size="11" fill="#555555" text-anchor="middle" letter-spacing="5">2024</text>
+                <!-- Lines in bottom right -->
+                <line x1="325" y1="255" x2="535" y2="255" stroke="#AAAAAA" stroke-width="0.8"/>
+                <line x1="325" y1="275" x2="480" y2="275" stroke="#AAAAAA" stroke-width="0.8"/>
+                <line x1="325" y1="295" x2="510" y2="295" stroke="#AAAAAA" stroke-width="0.8"/>
+                <line x1="325" y1="315" x2="460" y2="315" stroke="#AAAAAA" stroke-width="0.8"/>
+              </svg>
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__category">Editorial</span>
+              <h3 class="project-card__title">Vol. 1</h3>
+            </div>
+          </article>
+
+          <!-- Card 4: Suma -->
+          <article
+            class="project-card reveal"
+            data-project-id="4"
+            role="listitem button"
+            tabindex="0"
+            aria-label="Abrir proyecto: Suma — Packaging"
+          >
+            <div class="project-card__image" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <rect width="600" height="400" fill="#E8EDE3"/>
+                <!-- Packaging bottles -->
+                <rect x="165" y="60" width="100" height="270" rx="6" fill="#6A8560"/>
+                <rect x="165" y="60" width="100" height="40" rx="4" fill="#5A7450"/>
+                <rect x="278" y="100" width="80" height="190" rx="5" fill="#8AA882"/>
+                <rect x="278" y="100" width="80" height="30" rx="4" fill="#7A9870"/>
+                <rect x="120" y="160" width="35" height="130" rx="4" fill="#4E7044"/>
+                <!-- Label on tall bottle -->
+                <rect x="180" y="140" width="70" height="100" fill="#F0EDE6" opacity="0.9" rx="2"/>
+                <text x="215" y="184" font-family="Georgia, serif" font-size="16" font-weight="300" fill="#3A5032" text-anchor="middle" opacity="0.9">suma</text>
+                <line x1="185" y1="196" x2="245" y2="196" stroke="#3A5032" stroke-width="0.5" opacity="0.5"/>
+                <text x="215" y="212" font-family="Inter, sans-serif" font-size="8" fill="#5A7050" text-anchor="middle" letter-spacing="2" opacity="0.7">NATURAL</text>
+                <!-- Ground shadow -->
+                <ellipse cx="280" cy="345" rx="150" ry="10" fill="#4E7044" opacity="0.1"/>
+              </svg>
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__category">Packaging</span>
+              <h3 class="project-card__title">Suma</h3>
+            </div>
+          </article>
+
+          <!-- Card 5: Pulso -->
+          <article
+            class="project-card reveal"
+            data-project-id="5"
+            role="listitem button"
+            tabindex="0"
+            aria-label="Abrir proyecto: Pulso — Social Media"
+          >
+            <div class="project-card__image" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <rect width="600" height="400" fill="#0F0D18"/>
+                <!-- Grid of squares with varying opacity -->
+                <rect x="55" y="55" width="115" height="115" fill="#6B5CDB" opacity="0.85" rx="6"/>
+                <rect x="190" y="55" width="115" height="115" fill="#6B5CDB" opacity="0.50" rx="6"/>
+                <rect x="325" y="55" width="115" height="115" fill="#6B5CDB" opacity="0.25" rx="6"/>
+                <rect x="460" y="55" width="85" height="115" fill="#6B5CDB" opacity="0.12" rx="6"/>
+                <rect x="55" y="190" width="115" height="115" fill="#6B5CDB" opacity="0.20" rx="6"/>
+                <rect x="190" y="190" width="115" height="115" fill="#6B5CDB" opacity="0.60" rx="6"/>
+                <rect x="325" y="190" width="115" height="115" fill="#6B5CDB" opacity="0.95" rx="6"/>
+                <rect x="460" y="190" width="85" height="115" fill="#6B5CDB" opacity="0.35" rx="6"/>
+                <!-- Label bottom -->
+                <text x="300" y="360" font-family="Inter, sans-serif" font-size="11" fill="#6B5CDB" text-anchor="middle" letter-spacing="6" opacity="0.6">PULSO</text>
+                <!-- Pulse icon center of brightest square -->
+                <text x="383" y="257" font-family="Georgia, serif" font-size="28" fill="#FFFFFF" text-anchor="middle" opacity="0.9">↑</text>
+              </svg>
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__category">Social Media</span>
+              <h3 class="project-card__title">Pulso</h3>
+            </div>
+          </article>
+
+          <!-- Card 6: Archetype -->
+          <article
+            class="project-card reveal"
+            data-project-id="6"
+            role="listitem button"
+            tabindex="0"
+            aria-label="Abrir proyecto: Archetype — Branding Corporativo"
+          >
+            <div class="project-card__image" aria-hidden="true">
+              <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" focusable="false">
+                <rect width="600" height="400" fill="#F0F0EE"/>
+                <!-- Triangle composition -->
+                <polygon points="300,55 520,345 80,345" fill="none" stroke="#1A1A1A" stroke-width="2"/>
+                <polygon points="300,115 455,320 145,320" fill="#1A1A1A" opacity="0.06"/>
+                <polygon points="300,175 390,300 210,300" fill="#1A1A1A" opacity="0.08"/>
+                <!-- Center circle -->
+                <circle cx="300" cy="230" r="28" fill="none" stroke="#1A1A1A" stroke-width="1.2"/>
+                <circle cx="300" cy="230" r="4" fill="#B8976A"/>
+                <!-- Top vertex dot -->
+                <circle cx="300" cy="55" r="4" fill="#B8976A"/>
+                <!-- Label -->
+                <text x="300" y="382" font-family="Inter, sans-serif" font-size="9" fill="#888888" text-anchor="middle" letter-spacing="7">ARCHETYPE</text>
+              </svg>
+            </div>
+            <div class="project-card__info">
+              <span class="project-card__category">Branding Corporativo</span>
+              <h3 class="project-card__title">Archetype</h3>
+            </div>
+          </article>
+
+        </div><!-- /projects__grid -->
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="sobre-mi" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__content">
+            <header class="section-header section-header--left reveal">
+              <p class="section-label">Quién soy</p>
+              <h2 class="section-heading" id="about-heading">Sobre mí</h2>
+            </header>
+            <p class="about__bio reveal">
+              Soy diseñador gráfico especializado en identidad visual, branding y dirección de arte. Mi trabajo conecta estrategia y estética para crear sistemas visuales que comunican con precisión y dejan una impresión duradera.
+            </p>
+            <p class="about__bio reveal">
+              Creo en el diseño como herramienta de conexión: cada decisión tipográfica, cromática y compositiva tiene un propósito claro. Trabajo con marcas que valoran la coherencia, la originalidad y el largo plazo.
+            </p>
+            <ul class="about__skills reveal" aria-label="Especialidades">
+              <li>Identidad de marca</li>
+              <li>Dirección de arte</li>
+              <li>Diseño editorial</li>
+              <li>Packaging</li>
+              <li>Adobe Creative Cloud</li>
+              <li>Figma</li>
+            </ul>
+          </div>
+          <div class="about__visual reveal" aria-hidden="true">
+            <div class="about__portrait">
+              <svg viewBox="0 0 380 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <rect width="380" height="480" fill="#EAE6DF"/>
+                <!-- Abstract portrait placeholder -->
+                <circle cx="190" cy="165" r="80" fill="#C8B89A" opacity="0.45"/>
+                <rect x="95" y="255" width="190" height="160" rx="4" fill="#B8A080" opacity="0.3"/>
+                <circle cx="190" cy="165" r="56" fill="#C8B89A" opacity="0.6"/>
+                <circle cx="190" cy="165" r="30" fill="#B8976A" opacity="0.25"/>
+                <!-- Text at bottom -->
+                <line x1="80" y1="435" x2="300" y2="435" stroke="#AAAAAA" stroke-width="0.8"/>
+                <text x="190" y="455" font-family="Inter, sans-serif" font-size="9" fill="#999999" text-anchor="middle" letter-spacing="5">TONY STUDIO</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="servicios" aria-labelledby="services-heading">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-label">Lo que ofrezco</p>
+          <h2 class="section-heading" id="services-heading">Servicios</h2>
+        </header>
+        <ul class="services__list" role="list">
+          <li class="service-item reveal" role="listitem">
+            <span class="service-item__number" aria-hidden="true">01</span>
+            <div class="service-item__body">
+              <h3 class="service-item__title">Identidad Visual</h3>
+              <p class="service-item__desc">Diseño de logotipos, sistemas de identidad completos y guías de marca que definen y consolidan la imagen de tu negocio de forma coherente y memorable.</p>
+            </div>
+            <span class="service-item__arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="service-item reveal" role="listitem">
+            <span class="service-item__number" aria-hidden="true">02</span>
+            <div class="service-item__body">
+              <h3 class="service-item__title">Dirección de Arte</h3>
+              <p class="service-item__desc">Concepto visual, selección de paletas, tipografías y composición para campañas, proyectos editoriales, fotografía y contenido de marca.</p>
+            </div>
+            <span class="service-item__arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="service-item reveal" role="listitem">
+            <span class="service-item__number" aria-hidden="true">03</span>
+            <div class="service-item__body">
+              <h3 class="service-item__title">Diseño Editorial</h3>
+              <p class="service-item__desc">Catálogos, revistas, libros y memorias anuales con maquetación cuidada, tipografía refinada y coherente con la identidad de cada marca.</p>
+            </div>
+            <span class="service-item__arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="service-item reveal" role="listitem">
+            <span class="service-item__number" aria-hidden="true">04</span>
+            <div class="service-item__body">
+              <h3 class="service-item__title">Packaging</h3>
+              <p class="service-item__desc">Diseño de envases, etiquetas y packaging estructural que comunican el valor del producto desde el primer contacto visual.</p>
+            </div>
+            <span class="service-item__arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="service-item reveal" role="listitem">
+            <span class="service-item__number" aria-hidden="true">05</span>
+            <div class="service-item__body">
+              <h3 class="service-item__title">Social Media Design</h3>
+              <p class="service-item__desc">Plantillas, sistemas de contenido visual y kits de diseño para redes sociales consistentes con la identidad de marca en todos los formatos.</p>
+            </div>
+            <span class="service-item__arrow" aria-hidden="true">→</span>
+          </li>
+          <li class="service-item reveal" role="listitem">
+            <span class="service-item__number" aria-hidden="true">06</span>
+            <div class="service-item__body">
+              <h3 class="service-item__title">Consultoría de Marca</h3>
+              <p class="service-item__desc">Auditoría visual, estrategia de posicionamiento y hoja de ruta para marcas que buscan evolucionar y fortalecer su imagen en el mercado.</p>
+            </div>
+            <span class="service-item__arrow" aria-hidden="true">→</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contacto" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact__inner reveal">
+          <header class="section-header">
+            <p class="section-label">Trabajemos juntos</p>
+            <h2 class="section-heading" id="contact-heading">Contacto</h2>
+          </header>
+          <p class="contact__text">
+            ¿Tienes un proyecto en mente? Cuéntame sobre él.<br>
+            Respondo en menos de 48 horas.
+          </p>
+          <a
+            href="mailto:hola@tonystudio.com"
+            class="contact__email"
+            aria-label="Enviar un correo a hola@tonystudio.com"
+          >
+            hola@tonystudio.com
+          </a>
+          <nav class="contact__social" aria-label="Perfiles en redes sociales">
+            <a
+              href="https://instagram.com"
+              class="contact__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de Tony Studio en Instagram (abre en nueva pestaña)"
+            >Instagram</a>
+            <span class="contact__social-sep" aria-hidden="true">·</span>
+            <a
+              href="https://behance.net"
+              class="contact__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de Tony Studio en Behance (abre en nueva pestaña)"
+            >Behance</a>
+            <span class="contact__social-sep" aria-hidden="true">·</span>
+            <a
+              href="https://linkedin.com"
+              class="contact__social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Perfil de Tony Studio en LinkedIn (abre en nueva pestaña)"
+            >LinkedIn</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__brand">Tony Studio</p>
+        <p class="footer__copy">
+          <span aria-hidden="true">&copy;</span>
+          <span class="visually-hidden">Copyright</span>
+          2025 Tony Studio. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== PROJECT MODAL ========== -->
+  <div
+    class="modal"
+    id="project-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="modal__overlay" id="modal-overlay" aria-hidden="true"></div>
+    <div class="modal__panel" role="document">
+      <button
+        class="modal__close"
+        id="modal-close"
+        type="button"
+        aria-label="Cerrar proyecto"
+      >
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <line x1="1.5" y1="1.5" x2="16.5" y2="16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="16.5" y1="1.5" x2="1.5" y2="16.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal__body">
+        <div class="modal__image" id="modal-image" aria-hidden="true"></div>
+        <div class="modal__details">
+          <p class="modal__category" id="modal-category"></p>
+          <h2 class="modal__title" id="modal-title"></h2>
+          <dl class="modal__meta" id="modal-meta"></dl>
+          <p class="modal__description" id="modal-description"></p>
+          <ul class="modal__tags" id="modal-tags" aria-label="Disciplinas del proyecto"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
