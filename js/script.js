@@ -1,5 +1,5 @@
 /**
- * Tony Studio — Portfolio Script
+ * Herzel Studio — Portfolio Script
  * Vanilla JS: mobile menu, scroll spy, reveal animations,
  * project modal, keyboard accessibility.
  */
@@ -81,6 +81,188 @@
   const modalDesc   = document.getElementById('modal-description');
   const modalTags   = document.getElementById('modal-tags');
   const mobileLinks = document.querySelectorAll('.mobile-menu__link');
+  const galleryBandCards = document.querySelectorAll('.gallery-bands__card');
+
+  /* ============================================================
+     Project media rotator
+     - Every 3 seconds changes media with random movement direction.
+     - Ready for future multiple images per project via data-images.
+     ============================================================ */
+  function parseProjectMedia(card) {
+    const imageBox = card.querySelector('.project-card__image');
+    if (!imageBox) return [];
+
+    const media = [];
+    const initialVisual = imageBox.querySelector('svg, img');
+
+    if (initialVisual && initialVisual.tagName.toLowerCase() === 'svg') {
+      media.push({ type: 'svg', value: initialVisual.outerHTML });
+    } else if (initialVisual && initialVisual.tagName.toLowerCase() === 'img') {
+      media.push({
+        type: 'img',
+        value: initialVisual.getAttribute('src') || '',
+        alt: initialVisual.getAttribute('alt') || '',
+      });
+    }
+
+    // Optional future source list:
+    // data-images="img/proj1-01.jpg, img/proj1-02.jpg, ..."
+    const extraImages = (card.getAttribute('data-images') || '')
+      .split(',')
+      .map(function (item) { return item.trim(); })
+      .filter(Boolean);
+
+    extraImages.forEach(function (src) {
+      media.push({ type: 'img', value: src, alt: '' });
+    });
+
+    return media;
+  }
+
+  function createVisualNode(mediaItem) {
+    if (!mediaItem) return null;
+
+    if (mediaItem.type === 'svg') {
+      const template = document.createElement('template');
+      template.innerHTML = mediaItem.value.trim();
+      return template.content.firstElementChild;
+    }
+
+    const image = document.createElement('img');
+    image.src = mediaItem.value;
+    image.alt = mediaItem.alt || '';
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    return image;
+  }
+
+  function directionVectors(direction) {
+    switch (direction) {
+      case 'up':
+        return { old: 'translateY(-9%)', incoming: 'translateY(9%)' };
+      case 'down':
+        return { old: 'translateY(9%)', incoming: 'translateY(-9%)' };
+      case 'left':
+        return { old: 'translateX(-9%)', incoming: 'translateX(9%)' };
+      default:
+        return { old: 'translateX(9%)', incoming: 'translateX(-9%)' };
+    }
+  }
+
+  function initProjectMediaRotator() {
+    const directions = ['up', 'down', 'left', 'right'];
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    projectCards.forEach(function (card, cardIndex) {
+      const imageBox = card.querySelector('.project-card__image');
+      if (!imageBox) return;
+
+      const mediaList = parseProjectMedia(card);
+      if (mediaList.length === 0) return;
+
+      let currentIndex = 0;
+
+      imageBox.innerHTML = '';
+      const firstLayer = document.createElement('div');
+      firstLayer.className = 'project-card__media is-current';
+      const firstVisual = createVisualNode(mediaList[currentIndex]);
+      if (firstVisual) firstLayer.appendChild(firstVisual);
+      imageBox.appendChild(firstLayer);
+
+      if (prefersReducedMotion) {
+        return;
+      }
+
+      function animateNextMedia() {
+        const currentLayer = imageBox.querySelector('.project-card__media.is-current');
+        if (!currentLayer) return;
+
+        let nextIndex = currentIndex;
+        if (mediaList.length > 1) {
+          while (nextIndex === currentIndex) {
+            nextIndex = Math.floor(Math.random() * mediaList.length);
+          }
+        }
+
+        const direction = directions[Math.floor(Math.random() * directions.length)];
+        const vectors = directionVectors(direction);
+
+        const nextLayer = document.createElement('div');
+        nextLayer.className = 'project-card__media';
+        const nextVisual = createVisualNode(mediaList[nextIndex]);
+        if (!nextVisual) return;
+        nextLayer.appendChild(nextVisual);
+        nextLayer.style.opacity = '0';
+        nextLayer.style.transform = vectors.incoming;
+        imageBox.appendChild(nextLayer);
+
+        const timing = {
+          duration: 780,
+          easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
+          fill: 'forwards',
+        };
+
+        const oldAnim = currentLayer.animate(
+          [
+            { transform: 'translate(0, 0)', opacity: 1 },
+            { transform: vectors.old, opacity: 0 },
+          ],
+          timing
+        );
+
+        nextLayer.animate(
+          [
+            { transform: vectors.incoming, opacity: 0 },
+            { transform: 'translate(0, 0)', opacity: 1 },
+          ],
+          timing
+        );
+
+        oldAnim.onfinish = function () {
+          if (currentLayer.parentNode) {
+            currentLayer.parentNode.removeChild(currentLayer);
+          }
+          nextLayer.classList.add('is-current');
+          nextLayer.style.opacity = '';
+          nextLayer.style.transform = '';
+          currentIndex = nextIndex;
+        };
+      }
+
+      const initialDelay = 600 + (cardIndex * 220);
+      setTimeout(function () {
+        animateNextMedia();
+        setInterval(animateNextMedia, 5500);
+      }, initialDelay);
+    });
+  }
+
+  function initGalleryBandsFill() {
+    if (galleryBandCards.length === 0) return;
+
+    const sourceVisuals = Array.prototype.slice.call(
+      document.querySelectorAll(
+        '.projects .project-card__media.is-current > svg, .projects .project-card__media.is-current > img, .projects .project-card__image > svg, .projects .project-card__image > img'
+      )
+    );
+
+    if (sourceVisuals.length === 0) return;
+
+    galleryBandCards.forEach(function (slot, i) {
+      const source = sourceVisuals[i % sourceVisuals.length];
+      if (!source) return;
+
+      const clone = source.cloneNode(true);
+      if (clone.tagName && clone.tagName.toLowerCase() === 'img') {
+        clone.alt = '';
+        clone.loading = 'lazy';
+        clone.decoding = 'async';
+      }
+
+      slot.innerHTML = '';
+      slot.appendChild(clone);
+    });
+  }
 
   /* ============================================================
      1. Header — scroll effect
@@ -104,7 +286,7 @@
     mobileMenu.setAttribute('aria-hidden', 'false');
     menuToggle.classList.add('is-open');
     menuToggle.setAttribute('aria-expanded', 'true');
-    menuToggle.setAttribute('aria-label', 'Cerrar menú de navegación');
+    menuToggle.setAttribute('aria-label', 'Close navigation menu');
     document.body.classList.add('menu-open');
     // Move focus to first link
     const firstLink = mobileMenu.querySelector('.mobile-menu__link');
@@ -116,7 +298,7 @@
     mobileMenu.setAttribute('aria-hidden', 'true');
     menuToggle.classList.remove('is-open');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+    menuToggle.setAttribute('aria-label', 'Open navigation menu');
     document.body.classList.remove('menu-open');
     menuToggle.focus();
   }
@@ -212,17 +394,27 @@
     const data = projectData[projectId];
     if (!data) return;
 
-    // Populate image — clone SVG from the card
+    // Populate image — clone current visual (SVG or IMG) from the card
     const card = document.querySelector('[data-project-id="' + projectId + '"]');
     if (card) {
-      const svgSource = card.querySelector('.project-card__image svg');
-      if (svgSource) {
-        const svgClone = svgSource.cloneNode(true);
+      const mediaSource = card.querySelector(
+        '.project-card__media.is-current > svg, .project-card__media.is-current > img, .project-card__image svg, .project-card__image img'
+      );
+
+      if (mediaSource && mediaSource.tagName.toLowerCase() === 'svg') {
+        const svgClone = mediaSource.cloneNode(true);
         svgClone.removeAttribute('aria-hidden');
         svgClone.setAttribute('role', 'img');
         svgClone.setAttribute('aria-label', data.category + ': ' + data.title);
         modalImage.innerHTML = '';
         modalImage.appendChild(svgClone);
+      } else if (mediaSource && mediaSource.tagName.toLowerCase() === 'img') {
+        const imgClone = mediaSource.cloneNode(true);
+        imgClone.alt = data.category + ': ' + data.title;
+        imgClone.loading = 'eager';
+        imgClone.decoding = 'sync';
+        modalImage.innerHTML = '';
+        modalImage.appendChild(imgClone);
       }
     }
 
@@ -361,5 +553,7 @@
 
   applyStagger('.project-card', '.projects__grid');
   applyStagger('.service-item', '.services__list');
+  initProjectMediaRotator();
+  initGalleryBandsFill();
 
 })();

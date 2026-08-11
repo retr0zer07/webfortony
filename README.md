@@ -9,8 +9,10 @@ Portafolio profesional minimalista para diseñador gráfico. Construido con HTML
 ```
 webfortony/
 ├── index.html   → Estructura HTML (una sola página, navegación por anclas)
-├── styles.css   → Estilos: paleta, tipografía, grid, responsivo, animaciones
-├── script.js    → Interactividad: menú móvil, modal, scroll spy, reveal
+├── css/
+│   └── styles.css   → Estilos: paleta, tipografía, grid, responsivo, animaciones
+├── js/
+│   └── script.js    → Interactividad: menú móvil, modal, scroll spy, reveal
 └── README.md    → Este archivo
 ```
 
@@ -45,7 +47,7 @@ En `index.html`, busca y reemplaza todas las ocurrencias de `Tony Studio` por el
 
 ### Cambiar colores
 
-Abre `styles.css` y edita las **custom properties** al inicio del archivo (sección `1. Custom Properties`):
+Abre `css/styles.css` y edita las **custom properties** al inicio del archivo (sección `1. Custom Properties`):
 
 ```css
 :root {
@@ -63,7 +65,7 @@ Cambia `--c-accent` para modificar el color de acento en todo el sitio (línea b
 
 1. Elige dos fuentes en [Google Fonts](https://fonts.google.com): una **display** (para títulos) y una **sans-serif** (para cuerpo).
 2. Reemplaza el `<link>` de Google Fonts en `<head>` de `index.html`.
-3. En `styles.css`, actualiza:
+3. En `css/styles.css`, actualiza:
 
 ```css
 --font-display: 'NuevaFuente', Georgia, serif;
@@ -76,7 +78,7 @@ Cambia `--c-accent` para modificar el color de acento en todo el sitio (línea b
 
 Copia una `<article class="project-card">` existente dentro del `div.projects__grid`, cambia el `data-project-id` a un número nuevo (p.ej. `7`) y personaliza el SVG o reemplázalo con una etiqueta `<img>`.
 
-**Paso 2 — Añadir los datos en `script.js`:**
+**Paso 2 — Añadir los datos en `js/script.js`:**
 
 Dentro del objeto `projectData`, añade una entrada con el mismo ID:
 
@@ -140,8 +142,10 @@ En la sección `#contacto`, edita los `href` de los tres enlaces:
 ```
 webfortony/
 ├── index.html          Página principal (HTML semántico, accesible)
-├── styles.css          Hoja de estilos (mobile-first, custom properties)
-├── script.js           Lógica JS (IIFE, sin dependencias)
+├── css/
+│   └── styles.css      Hoja de estilos (mobile-first, custom properties)
+├── js/
+│   └── script.js       Lógica JS (IIFE, sin dependencias)
 └── README.md           Instrucciones de uso y personalización
 ```
 
