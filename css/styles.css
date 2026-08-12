@@ -42,8 +42,8 @@
   --c-overlay:      rgba(8, 8, 8, 0.82);
 
   /* Typography */
-  --font-display: 'Space Grotesk', 'Arial Narrow', Arial, sans-serif;
-  --font-body:    'Space Grotesk', 'Arial Narrow', Arial, sans-serif;
+  --font-display: 'Inter', Arial, sans-serif;
+  --font-body:    'Inter', Arial, sans-serif;
 
   /* Spacing scale */
   --space-xs:   0.5rem;
@@ -137,7 +137,7 @@ button {
 ========================================= */
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
@@ -173,8 +173,8 @@ p {
 
 .section-label {
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-size: 0.68rem;
+  font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--c-text-muted);
@@ -184,7 +184,7 @@ p {
 .section-heading {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 5vw, 4.2rem);
-  font-weight: 300;
+  font-weight: 900;
   line-height: 1.02;
   letter-spacing: -0.02em;
   color: var(--c-text);
@@ -205,8 +205,8 @@ p {
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 0.875rem 2rem;
@@ -313,8 +313,8 @@ p {
 }
 
 .nav__link {
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.72rem;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--c-text);
@@ -512,7 +512,7 @@ p {
 .hero__heading {
   font-family: var(--font-body);
   font-size: clamp(2.2rem, 8.6vw, 7.2rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 0.9;
   letter-spacing: -0.02em;
   color: var(--c-text);
@@ -524,7 +524,7 @@ p {
 
 .hero__heading em {
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--c-text);
 }
 
@@ -574,8 +574,8 @@ p {
 }
 
 .hero__scroll-label {
-  font-size: 0.625rem;
-  font-weight: 500;
+  font-size: 0.58rem;
+  font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--c-text-light);
@@ -593,7 +593,7 @@ section:nth-child(even) {
 }
 
 .tag-marquee {
-  padding-block: 0.5rem;
+  padding-block: 0.44rem;
   border-block: 1px solid var(--c-border);
   background-color: #060606;
   color: var(--c-accent);
@@ -601,6 +601,10 @@ section:nth-child(even) {
   display: flex;
   align-items: center;
   overflow: hidden;
+}
+
+.tag-marquee--hero {
+  margin-top: 0.28rem;
 }
 
 .tag-marquee__viewport {
@@ -621,7 +625,7 @@ section:nth-child(even) {
 .tag-marquee__text {
   max-width: none;
   font-family: var(--font-body);
-  font-size: clamp(0.92rem, 1.8vw, 1.15rem);
+  font-size: clamp(0.84rem, 1.6vw, 1.02rem);
   line-height: 1;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -649,7 +653,7 @@ section:nth-child(even) {
 .projects .section-heading {
   font-family: var(--font-body);
   font-size: clamp(2.4rem, 6.8vw, 5.2rem);
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   line-height: 0.94;
@@ -715,8 +719,8 @@ section:nth-child(even) {
 }
 
 .project-card__category {
-  font-size: 0.6875rem;
-  font-weight: 500;
+  font-size: 0.64rem;
+  font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--c-text-light);
@@ -725,7 +729,7 @@ section:nth-child(even) {
 .project-card__title {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 900;
   color: var(--c-text);
   letter-spacing: -0.01em;
 }
@@ -752,7 +756,7 @@ section:nth-child(even) {
 .about__title {
   font-family: var(--font-body);
   font-size: clamp(2.8rem, 8.4vw, 6.6rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 0.94;
   text-transform: uppercase;
   letter-spacing: -0.01em;
@@ -763,7 +767,7 @@ section:nth-child(even) {
 .about__subtitle {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2.9vw, 2.9rem);
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--c-accent);
@@ -782,7 +786,7 @@ section:nth-child(even) {
   margin-top: 0.5rem;
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 2.2vw, 2.4rem);
-  font-weight: 700;
+  font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
   color: #F0C76D;
@@ -882,7 +886,7 @@ section:nth-child(even) {
 #faq .section-heading {
   font-family: var(--font-body);
   font-size: clamp(2.5rem, 7.2vw, 5.8rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 0.94;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -907,8 +911,8 @@ section:nth-child(even) {
 
 .service-item__number {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 400;
   letter-spacing: 0.08em;
   color: var(--c-text-light);
   flex-shrink: 0;
@@ -923,7 +927,7 @@ section:nth-child(even) {
 .service-item__title {
   font-family: var(--font-body);
   font-size: clamp(1.15rem, 2.8vw, 1.55rem);
-  font-weight: 500;
+  font-weight: 900;
   line-height: 1.25;
   color: var(--c-text);
   margin-bottom: 0.5rem;
@@ -931,7 +935,7 @@ section:nth-child(even) {
 }
 
 .service-item__desc {
-  font-size: 0.96rem;
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.8;
   color: var(--c-text-muted);
@@ -973,7 +977,7 @@ section:nth-child(even) {
 #faq .service-item__title {
   font-family: var(--font-body);
   font-size: clamp(1.2rem, 2.1vw, 2rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 1.22;
   color: #F0C76D;
   margin-bottom: 0.5rem;
@@ -1007,7 +1011,7 @@ section:nth-child(even) {
 .contact .section-heading {
   font-family: var(--font-body);
   font-size: clamp(2.8rem, 8.2vw, 6.2rem);
-  font-weight: 700;
+  font-weight: 900;
   line-height: 0.92;
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -1056,8 +1060,8 @@ section:nth-child(even) {
 }
 
 .contact__social-link {
-  font-size: clamp(0.72rem, 1.2vw, 0.95rem);
-  font-weight: 500;
+  font-size: clamp(0.66rem, 1.1vw, 0.88rem);
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #D4D3CF;
@@ -1097,8 +1101,8 @@ section:nth-child(even) {
 
 .footer__brand {
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 500;
+  font-size: 0.76rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.95);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1106,7 +1110,7 @@ section:nth-child(even) {
 }
 
 .footer__copy {
-  font-size: 0.7rem;
+  font-size: 0.64rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1218,8 +1222,8 @@ section:nth-child(even) {
 }
 
 .modal__category {
-  font-size: 0.6875rem;
-  font-weight: 500;
+  font-size: 0.64rem;
+  font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--c-accent);
@@ -1230,7 +1234,7 @@ section:nth-child(even) {
 .modal__title {
   font-family: var(--font-display);
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 300;
+  font-weight: 900;
   line-height: 1.1;
   margin-bottom: var(--space-md);
   color: var(--c-text);
@@ -1252,8 +1256,8 @@ section:nth-child(even) {
 }
 
 .modal__meta dt {
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--c-text-light);
@@ -1261,14 +1265,14 @@ section:nth-child(even) {
 }
 
 .modal__meta dd {
-  font-size: 0.875rem;
-  font-weight: 300;
+  font-size: 0.82rem;
+  font-weight: 400;
   color: var(--c-text);
 }
 
 .modal__description {
-  font-size: 0.9375rem;
-  font-weight: 300;
+  font-size: 0.88rem;
+  font-weight: 400;
   line-height: 1.8;
   color: var(--c-text-muted);
   margin-bottom: var(--space-md);
@@ -1282,8 +1286,8 @@ section:nth-child(even) {
 }
 
 .modal__tags li {
-  font-size: 0.6875rem;
-  font-weight: 500;
+  font-size: 0.64rem;
+  font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--c-text-muted);
