@@ -775,7 +775,7 @@ section:nth-child(even) {
 }
 
 .about__bio {
-  font-size: clamp(1.15rem, 2.4vw, 2.9rem);
+  font-size: clamp(0.98rem, 1.95vw, 2.15rem);
   font-weight: 400;
   line-height: 1.25;
   color: #EDEDEA;
@@ -984,7 +984,7 @@ section:nth-child(even) {
 }
 
 #faq .service-item__desc {
-  font-size: clamp(1rem, 1.7vw, 1.65rem);
+  font-size: clamp(0.88rem, 1.45vw, 1.3rem);
   font-weight: 400;
   line-height: 1.4;
   color: #EDEDEA;
