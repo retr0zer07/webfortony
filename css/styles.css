@@ -98,6 +98,11 @@ body {
   line-height: 1.7;
   color: var(--c-text);
   background-color: var(--c-bg);
+  background-image: linear-gradient(rgba(6, 6, 6, 0.85), rgba(6, 6, 6, 0.85)), url('../img/back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -469,7 +474,7 @@ p {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background-color: #060606;
+  background-color: rgba(6, 6, 6, 0.76);
 }
 
 .hero,
@@ -589,13 +594,13 @@ section {
 }
 
 section:nth-child(even) {
-  background-color: var(--c-alt-bg);
+  background-color: transparent;
 }
 
 .tag-marquee {
   padding-block: 0.44rem;
   border-block: 1px solid var(--c-border);
-  background-color: #060606;
+  background-color: rgba(6, 6, 6, 0.82);
   color: var(--c-accent);
   margin-top: -0.35rem;
   display: flex;
@@ -647,7 +652,7 @@ section:nth-child(even) {
    10. Projects Grid
 ========================================= */
 .projects {
-  background-color: var(--c-surface);
+  background-color: rgba(10, 10, 10, 0.84);
 }
 
 .projects .section-heading {
@@ -738,7 +743,7 @@ section:nth-child(even) {
    12. About
 ========================================= */
 .about {
-  background-color: #060606;
+  background-color: rgba(6, 6, 6, 0.74);
 }
 
 .about__inner {
@@ -797,7 +802,7 @@ section:nth-child(even) {
    13. Gallery Bands
 ========================================= */
 .gallery-bands {
-  background-color: #060606;
+  background-color: rgba(6, 6, 6, 0.7);
   padding-block: clamp(2rem, 5vw, 3.5rem);
   overflow: hidden;
 }
@@ -868,7 +873,7 @@ section:nth-child(even) {
    14. Services
 ========================================= */
 .services {
-  background-color: var(--c-surface);
+  background-color: rgba(10, 10, 10, 0.86);
 }
 
 .services__list {
@@ -876,7 +881,7 @@ section:nth-child(even) {
 }
 
 #faq {
-  background-color: #060606;
+  background-color: rgba(6, 6, 6, 0.8);
 }
 
 #faq .section-header {
@@ -995,7 +1000,7 @@ section:nth-child(even) {
    14. Contact
 ========================================= */
 .contact {
-  background-color: #060606;
+  background-color: rgba(6, 6, 6, 0.72);
 }
 
 .contact__inner {
@@ -1086,7 +1091,7 @@ section:nth-child(even) {
    15. Footer
 ========================================= */
 .footer {
-  background-color: #111111;
+  background-color: rgba(12, 12, 12, 0.9);
   color: rgba(255, 255, 255, 0.76);
   padding-block: var(--space-lg);
 }
@@ -1472,6 +1477,13 @@ a.skip-link:focus {
   .modal__panel {
     max-width: 580px;
   }
+}
+
+/* =========================================
+   Global Background Transparency Layering
+========================================= */
+.header.is-scrolled {
+  background-color: rgba(6, 6, 6, 0.82);
 }
 
 /* =========================================
