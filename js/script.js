@@ -240,27 +240,41 @@
   function initGalleryBandsFill() {
     if (galleryBandCards.length === 0) return;
 
-    const sourceVisuals = Array.prototype.slice.call(
-      document.querySelectorAll(
-        '.projects .project-card__media.is-current > svg, .projects .project-card__media.is-current > img, .projects .project-card__image > svg, .projects .project-card__image > img'
-      )
-    );
+    const galleryImageSources = [
+      'img/pasarela/pasarela-01.webp',
+      'img/pasarela/pasarela-02.webp',
+      'img/pasarela/pasarela-03.webp',
+      'img/pasarela/pasarela-04.webp',
+      'img/pasarela/pasarela-05.webp',
+      'img/pasarela/pasarela-06.webp',
+      'img/pasarela/pasarela-07.webp',
+      'img/pasarela/pasarela-08.webp',
+      'img/pasarela/pasarela-09.webp',
+    ];
 
-    if (sourceVisuals.length === 0) return;
+    const fixedImageOrders = [
+      [3, 8, 1, 6, 4, 9],
+      [7, 2, 9, 4, 1],
+      [5, 1, 8, 3, 6, 2],
+    ];
 
-    galleryBandCards.forEach(function (slot, i) {
-      const source = sourceVisuals[i % sourceVisuals.length];
-      if (!source) return;
+    document.querySelectorAll('.gallery-bands__lane').forEach(function (lane, laneIndex) {
+      const laneCards = lane.querySelectorAll('.gallery-bands__card');
+      const order = fixedImageOrders[laneIndex % fixedImageOrders.length];
+      const halfLength = Math.floor(laneCards.length / 2);
 
-      const clone = source.cloneNode(true);
-      if (clone.tagName && clone.tagName.toLowerCase() === 'img') {
-        clone.alt = '';
-        clone.loading = 'lazy';
-        clone.decoding = 'async';
-      }
+      laneCards.forEach(function (slot, cardIndex) {
+        const imageIndex = order[cardIndex % halfLength] - 1;
+        const image = document.createElement('img');
+        image.src = galleryImageSources[imageIndex];
+        image.alt = '';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.fetchPriority = 'low';
 
-      slot.innerHTML = '';
-      slot.appendChild(clone);
+        slot.innerHTML = '';
+        slot.appendChild(image);
+      });
     });
   }
 
